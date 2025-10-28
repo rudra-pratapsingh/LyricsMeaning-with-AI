@@ -28,11 +28,11 @@ def get_lyrics(song_name, artist_name):
     print(f"✅ Found lyrics for '{song.title}' by '{song.artist}'")
     return song.lyrics
         
-    except Exception as e:
-      print(f"❌ Error fetching lyrics: {str(e)}")
-      import traceback
-      traceback.print_exc()
-      return None
+  except Exception as e:
+    print(f"❌ Error fetching lyrics: {str(e)}")
+    import traceback
+    traceback.print_exc()
+    return None
 
 def save_lyrics(song_name, artist_name):
   artist = genius.search_artist(artist_name, max_songs=0, include_features=True)
